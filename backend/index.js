@@ -22,7 +22,21 @@ app.get('/health', (req, res) => {
 app.get('/students', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM students ORDER BY created_at DESC');
-    res.json(result.rows);
+    res.status(200).json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// GET student by code
+app.get('/students/code/:code', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM students WHERE student_code = $1', [req.params.code]);
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Student not found' });
+    }
+    res.status(200).json(result.rows[0]);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Internal server error' });
