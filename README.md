@@ -93,6 +93,6 @@ student-management/
 
 ## 👤 Thông tin sinh viên
 
-- **Họ tên**: Nguyễn Văn A
-- **MSSV**: SV001
+- **Họ tên**: Thái Hữu Long Vũ
+- **MSSV**: SV006
 - **Lớp**: CNTT01
