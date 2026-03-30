@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:5000'
-const MY_CODE = 'SV006' // Mã sinh viên của bạn trong database
-
+const MY_CODE = 'SV006'
 export default function AboutPage() {
   const [student, setStudent] = useState(null)
   const [loading, setLoading] = useState(true)
