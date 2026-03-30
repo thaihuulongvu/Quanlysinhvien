@@ -1,4 +1,4 @@
-const pool = require('../db');
+const pool = require('./db');
 
 const createTableQuery = `
   CREATE TABLE IF NOT EXISTS students (
